@@ -1,0 +1,28 @@
+// seller auto signup page start
+.seller-auth-part{
+    padding: 50px 0;
+    background: linear-gradient(90deg, rgb(255, 122, 31, 0.6) 0%, rgb(255, 55, 36, 0.6) 100%);
+    .main-bg{
+        background: #ffebe652;
+        border-radius: 10px;
+    }
+    .seller-text{
+        h1 {
+            display: inline-block;
+            font-size: 22px;
+            text-align: start;
+            background: red;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 0 25px 25px 0;
+            margin: 10px 0;
+            font-family: Roboto;
+        }
+        .seller-img{
+            text-align: center;
+            img{
+                width: 500px;
+            }
+        } 
+    } 
+}
