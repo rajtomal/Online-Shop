@@ -1,0 +1,64 @@
+body {
+  font-family: "Roboto";
+}
+
+.navigation-ber-part {
+  padding: 10px 0;
+  background: #F0F2EE;
+}
+.navigation-ber-part .navbar-brand img {
+  max-width: 50px;
+}
+.navigation-ber-part .nav-item {
+  padding: 0 5px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.navigation-ber-part .card-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation-ber-part .bell-icon a {
+  position: absolute;
+}
+.navigation-ber-part .bell-icon svg {
+  width: 25px;
+  height: 25px;
+}
+.navigation-ber-part .cart-count {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: linear-gradient(90deg, rgb(255, 122, 31) 0%, rgb(255, 55, 36) 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-radius: 50%;
+  position: relative;
+  top: -6px;
+  left: 8px;
+}
+.navigation-ber-part .search-box {
+  position: relative;
+  font-size: 14px;
+}
+.navigation-ber-part .search-box input {
+  font-size: 14px;
+  padding-right: 80px;
+}
+.navigation-ber-part .search-box button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  background: linear-gradient(90deg, rgb(255, 122, 31) 0%, rgb(255, 55, 36) 100%);
+}
+.navigation-ber-part .search-box button {
+  padding: 4px;
+  border-radius: 0 5px 5px 0;
+}

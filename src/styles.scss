@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../src/assets/style/body';
+@import '../src/assets/style/footer';
+@import '../src/assets/style/header';
+@import '../src/assets/style/responsive';
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
