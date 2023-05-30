@@ -4,6 +4,10 @@
     top: 35px;
     right: 100px;
   }
+  .seller-auth-part {
+    padding: 30px 0;
+    height: auto;
+  }
 }
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   .card-item {
