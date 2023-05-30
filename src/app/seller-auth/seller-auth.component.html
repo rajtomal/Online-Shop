@@ -15,19 +15,19 @@
         <div class="seller-form">
           <div class="all-signup">
             <h1>Create an account</h1>
-            <form class="from-box">
+            <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="from-box">
               <div class="input-box">
-                <input type="text" placeholder="Enter Name">
+                <input type="text" ngModel name="name" placeholder="Enter Name">
               </div>
               <div class="input-box">
-                <input type="email" placeholder="Enter email" required>
+                <input type="email" ngModel name="email" placeholder="Enter email" required>
               </div>
               <div class="input-box">
-                <input type="password" placeholder="Enter password" required>
+                <input type="password" ngModel name="password" placeholder="Enter password" required>
               </div>
-              <button>Sign up</button>
+              <button>Sign Up</button>
             </form>
-            <p>Already have an account? <a>Log in</a></p>
+            <p>Already have an account? <a>LogIn</a></p>
           </div>
         </div>
       </div>
