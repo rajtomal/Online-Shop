@@ -9,14 +9,12 @@ import { SignUp } from '../data-type';
   styleUrls: ['./seller-auth.component.scss']
 })
 export class SellerAuthComponent {
-  constructor(private seller:SellerService, private router: Router){}
-
+  constructor(private seller:SellerService, private router: Router){};
+  ngOnInit():void{
+    this.seller.reloadSeller();
+  }
   signUp(data:SignUp):void{
-
-    this.seller.userSignUp(data).subscribe((result)=>{
-      if(result){
-        this.router.navigate(['seller-home']);
-      }
-    });
+    // post data for seller service
+    this.seller.userSignUp(data)
   }
 }
