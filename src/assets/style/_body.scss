@@ -89,8 +89,13 @@
   .seller-auth-part .all-signup P{
     font-size: 16px;
   }
-  .seller-auth-part .all-signup P a{
+  .seller-auth-part .all-signup P a {
     font-size: 16px;
     font-weight: 600;
+    color: rgb(255, 55, 36);
+    cursor: pointer;
+    transition: all linear 0.4s;
+  }
+  .seller-auth-part .all-signup P a:hover{
     color: rgb(255, 55, 36);
   }

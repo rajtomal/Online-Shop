@@ -13,7 +13,7 @@
       </div>
       <div class="col-lg-4 mt-2">
         <div class="seller-form">
-          <div class="all-signup">
+          <div *ngIf="!showLogin" class="all-signup">
             <h1>Create an account</h1>
             <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="from-box">
               <div class="input-box">
@@ -27,7 +27,22 @@
               </div>
               <button>Sign Up</button>
             </form>
-            <p>Already have an account? <a>LogIn</a></p>
+            <p>Already have an account? <a (click)="loginPage()">LogIn</a></p>
+          </div>
+
+
+          <div *ngIf="showLogin" class="all-signup">
+            <h1>Log In</h1>
+            <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="from-box">
+              <div class="input-box">
+                <input type="email" ngModel name="email" placeholder="Enter email" required>
+              </div>
+              <div class="input-box">
+                <input type="password" ngModel name="password" placeholder="Enter password" required>
+              </div>
+              <button>Log In</button>
+            </form>
+            <p>Don't have any account? <a (click)="signUpPage()">SignUp</a></p>
           </div>
         </div>
       </div>

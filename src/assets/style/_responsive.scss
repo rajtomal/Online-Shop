@@ -11,6 +11,12 @@
         padding: 30px 0;
         height: auto;
     }
+    .seller-auth-part .seller-text .seller-img img {
+        width: 325px;
+    }
+    .seller-auth-part .seller-text p {
+        font-size: 22px;
+    }
 }
 @media screen and (min-width:767px) and (max-width:1023px) {
     .card-item {
