@@ -33,7 +33,7 @@
 
           <div *ngIf="showLogin" class="all-signup">
             <h1>Log In</h1>
-            <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="from-box">
+            <form #sellerLogIn="ngForm" (ngSubmit)="logIn(sellerLogIn.value)" class="from-box">
               <div class="input-box">
                 <input type="email" ngModel name="email" placeholder="Enter email" required>
               </div>

@@ -19,6 +19,11 @@ export class SellerAuthComponent {
     // post data for seller service
     this.seller.userSignUp(data)
   }
+  logIn(data:SignUp):void{
+    console.log(data)
+    // post data for seller service
+    // this.seller.userSignUp(data)
+  }
   loginPage(){
     this.showLogin = true;
   }
