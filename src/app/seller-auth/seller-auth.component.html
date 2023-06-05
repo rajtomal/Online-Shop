@@ -40,6 +40,7 @@
               <div class="input-box">
                 <input type="password" ngModel name="password" placeholder="Enter password" required>
               </div>
+              <p>{{logInError}}</p>
               <button>Log In</button>
             </form>
             <p>Don't have any account? <a (click)="signUpPage()">SignUp</a></p>
