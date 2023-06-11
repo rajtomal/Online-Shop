@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { SignUp } from '../data-type';
+import { SignUp, logIn } from '../data-type';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
@@ -23,6 +23,11 @@ export class SellerService {
       // path defined
       this.router.navigate(['seller-home']);
     });
+  }
+  userLogIn(data:logIn){
+    this.http.post('http://localhost:3000/login', data , {observe:'response'}).subscribe(()=>{
+
+    })
   }
   reloadSeller(){
     if(localStorage.getItem('seller')){
