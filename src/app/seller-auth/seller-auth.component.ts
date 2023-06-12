@@ -22,7 +22,10 @@ export class SellerAuthComponent {
     this.seller.userSignUp(data)
   }
   logIn(data:logIn):void{
+<<<<<<< HEAD
     this.logInError='';
+=======
+>>>>>>> c88e0dc44f895f607c6ffeaa08f3aaf94cdf1a0d
     // console.log(data)
     // post data for seller service 
     this.seller.logIn(data)
