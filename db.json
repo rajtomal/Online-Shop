@@ -2,30 +2,16 @@
   "seller": [
     {
       "name": "Tomal",
-      "email": "tomal@gmail.com",
-      "password": "Zxc@123",
+      "email": "tom@gmail.com",
+      "password": "tom",
       "id": 1
     },
     {
-      "name": "Toukir",
-      "email": "toukir@gmail.com",
-      "password": "Zxc@123",
+      "name": "Tomal",
+      "email": "tom@gmail.com",
+      "password": "tom",
       "id": 2
-    },
-    {
-      "name": "Rasu",
-      "email": "rasu@gmail.com",
-      "password": "rasu",
-      "id": 3
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 4
     }
   ],
-  "login":[
-
-  ]
+  "login": []
 }

@@ -1,7 +1,7 @@
 <section class="seller-auth-part">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mt-2">
+    <div class="row full-width">
+      <div class="col-lg-8 two-part">
         <div class="seller-text">
           <h1>WELCOME</h1>
           <div class="seller-img">
@@ -11,7 +11,7 @@
             consequatur.</p>
         </div>
       </div>
-      <div class="col-lg-4 mt-2">
+      <div class="col-lg-4 two-part">
         <div class="seller-form">
           <div *ngIf="!showLogin" class="all-signup">
             <h1>Create an account</h1>
@@ -40,6 +40,7 @@
               <div class="input-box">
                 <input type="password" ngModel name="password" placeholder="Enter password" required>
               </div>
+              <p class="err-message">{{logInError}}</p>
               <button>Log In</button>
             </form>
             <p>Don't have any account? <a (click)="signUpPage()">SignUp</a></p>

@@ -7,8 +7,15 @@
     display: flex;
     align-items: center;
   }
-  .seller-auth-part .seller-text {
+  .full-width{
     background: #ffebe652;
+  }
+  .two-part{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .seller-auth-part .seller-text {
+    // background: #ffebe652;
     border-radius: 10px;
     height: 100%;
   }
@@ -39,7 +46,7 @@
   .seller-auth-part .seller-form {
     background: #fff;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
     padding: 30px 20px;
   }
   .seller-auth-part .seller-form h1 {
@@ -98,4 +105,13 @@
   }
   .seller-auth-part .all-signup P a:hover{
     color: rgb(255, 55, 36);
+  }
+  .err-message {
+    background: red;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
   }
