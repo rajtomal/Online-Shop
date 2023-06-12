@@ -17,6 +17,15 @@
     .seller-auth-part .seller-text p {
         font-size: 22px;
     }
+    .seller-auth-part .seller-form {
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .navigation-ber-part {
+        position: sticky;
+        top: 0px;
+    }
 }
 @media screen and (min-width:767px) and (max-width:1023px) {
     .card-item {

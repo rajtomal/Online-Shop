@@ -26,6 +26,11 @@ export class SellerService {
       this.router.navigate(['seller-home']);
     });
   }
+  userLogIn(data:logIn){
+    this.http.post('http://localhost:3000/login', data , {observe:'response'}).subscribe(()=>{
+
+    })
+  }
   reloadSeller(){
     if(localStorage.getItem('seller')){
       this.isSellerLoggedIn.next(true);
