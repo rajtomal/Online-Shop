@@ -11,6 +11,18 @@
       "email": "tom@gmail.com",
       "password": "tom",
       "id": 2
+    },
+    {
+      "name": "Rasu",
+      "email": "rasu@gmail.com",
+      "password": "rasu",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 4
     }
   ],
   "login": []
