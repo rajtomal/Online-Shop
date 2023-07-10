@@ -1,49 +1,94 @@
-
 <header class="navigation-ber-part">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="../../assets/images/logo.png" alt="logo">
-              </a>
-              
-              <button class="navbar-toggler custom-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="seller-auth">Seller</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page">LogIn</a>
-                  </li>
-                </ul>
-                
-              </div>
-              <ul class="card-item">
-                <li class="nav-item bell-icon">
-                  <a class="nav-link" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path fill="currentColor" d="m450.27 348.569l-43.67-80.624V184c0-83.813-68.187-152-152-152s-152 68.187-152 152v83.945l-43.672 80.623A24 24 0 0 0 80.031 384h86.935a88.866 88.866 0 0 0-.367 8a88 88 0 0 0 176 0c0-2.7-.129-5.364-.367-8h86.935a24 24 0 0 0 21.1-35.431ZM310.6 392a56 56 0 1 1-111.419-8h110.837a56.14 56.14 0 0 1 .582 8ZM93.462 352l41.138-75.945V184a120 120 0 0 1 240 0v92.055L415.736 352Z"/></svg></a>
-                  <span class="cart-count">22</span>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a routerLink="/" class="navbar-brand" href="#">
+              <img src="../../assets/images/logo.png" alt="logo">
+            </a>
+
+            <button class="navbar-toggler custom-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div [ngSwitch]="menuType" class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul *ngSwitchCase="'default'" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="seller-auth">Seller</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page">LogIn</a>
                 </li>
               </ul>
+              <ul *ngSwitchCase="'seller'" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page">Product List</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page">Add Product</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link active" aria-current="page">{{sellerName | titlecase}}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" (click)="logOut()" aria-current="page">Logout</a>
+                </li> -->
+              </ul>
+
             </div>
-          </nav>
-        </div>
-        
-        <div class="col-lg-2">
-                <form class="d-flex mt-3 search-box" role="search">
-                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50"><path fill="currentColor" d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11z"/><path fill="currentColor" d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z"/></svg>
+            <div [ngSwitch]="menuType">
+              <div *ngSwitchCase="'default'" class="card-item">
+                <div class="nav-item bell-icon">
+                  <a class="nav-link" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="512"
+                      height="512" viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                        d="m450.27 348.569l-43.67-80.624V184c0-83.813-68.187-152-152-152s-152 68.187-152 152v83.945l-43.672 80.623A24 24 0 0 0 80.031 384h86.935a88.866 88.866 0 0 0-.367 8a88 88 0 0 0 176 0c0-2.7-.129-5.364-.367-8h86.935a24 24 0 0 0 21.1-35.431ZM310.6 392a56 56 0 1 1-111.419-8h110.837a56.14 56.14 0 0 1 .582 8ZM93.462 352l41.138-75.945V184a120 120 0 0 1 240 0v92.055L415.736 352Z" />
+                      </svg></a>
+                  <span class="cart-count">22</span>
+                </div>
+              </div>
+              <div *ngSwitchCase="'seller'" class="card-item">
+                <div class="dropdown profile-icon">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../../assets/images/icons/man.png" alt="man">
                   </button>
-                </form>
-        </div>
+                    <ul class="dropdown-menu profile-info">
+                      <li>
+                        <a>
+                          <img class="profile-child-icon" src="../../assets/images/icons/user-name-icon.svg" alt="">
+                          <span>{{sellerName | titlecase}}</span>
+                        </a>
+                      </li>
+                      <li (click)="logOut()">
+                        <a>
+                          <img class="profile-child-icon" src="../../assets/images/icons/logout.svg" alt="">
+                          <span>Logout</span>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div *ngIf="menuType==='default'" class="col-lg-8 offset-lg-2 col-sm-12">
+        <form class="d-flex mt-2 search-box" role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
+              <path fill="currentColor"
+                d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11z" />
+              <path fill="currentColor" d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z" /></svg>
+          </button>
+        </form>
       </div>
     </div>
-  </header>
+  </div>
+</header>
