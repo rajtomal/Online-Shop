@@ -1,0 +1,35 @@
+<div class="seller-add-product">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- <div class="col-lg-4">
+                <div class="add-product-left">
+                    <img src="../../assets/images/Add Product.gif" alt="Add Product">
+                </div>
+            </div> -->
+            <div class="col-lg-6">
+                <div class="add-class-form">
+                    <h2>Add Product</h2>
+                    <p>Add your New Product and Grow your Business</p>
+                    <form #addProductItem="ngForm" (submit)="addProduct(addProductItem.value)">
+                        <div class="input-box">
+                            <input type="text" ngModel name="name" placeholder="Product Name" required>
+                          </div>
+                          <div class="input-box">
+                            <input type="text" ngModel name="model" placeholder="Product Model" required>
+                          </div>
+                          <div class="input-box">
+                            <input type="text" ngModel name="price" placeholder="Product Price" required>
+                          </div>
+                          <div class="input-box">
+                            <input type="text" ngModel name="imgUrl" placeholder="Product Images Url" required>
+                          </div>
+                          <div class="input-box">
+                            <textarea type="text" ngModel name="description" placeholder="Product Description" required></textarea>
+                          </div>
+                          <button>ADD PRODUCT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

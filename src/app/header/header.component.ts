@@ -16,11 +16,11 @@ export class HeaderComponent {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           console.log(" login seller")
           this.menuType = 'seller';
+          // seller name to show in display
           if (localStorage.getItem('seller')) {
             let sellerStore: any = localStorage.getItem('seller');
             let sellerData: any = sellerStore && JSON.parse(sellerStore)[0];
             this.sellerName = sellerData.name;
-            console.log(sellerData, 'hi')
           }
         } else {
           console.log("not seller")

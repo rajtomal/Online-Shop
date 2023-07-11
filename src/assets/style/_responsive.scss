@@ -6,6 +6,11 @@
         top: 35px;
         right: 100px;
     }
+    .profile-item {
+        position: fixed !important;
+        top: 30px !important;
+        right: 86px !important;
+    }
     // seller auth sign up page
     .seller-auth-part {
         padding: 30px 0;
@@ -32,6 +37,11 @@
         position: fixed;
         top: 35px;
         right: 150px;
+    }
+    .profile-item {
+        position: fixed !important;
+        top: 30px !important;
+        right: 140px !important;
     }
     // seller auth sign up page
 }
