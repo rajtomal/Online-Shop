@@ -14,7 +14,7 @@ export class HeaderComponent {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
-          console.log(" login seller")
+          console.log("login seller")
           this.menuType = 'seller';
           // seller name to show in display
           if (localStorage.getItem('seller')) {

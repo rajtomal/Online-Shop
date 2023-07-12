@@ -1,59 +1,132 @@
 {
   "seller": [
     {
-      "name": "Tomal",
-      "email": "tom@gmail.com",
-      "password": "tom",
+      "name": "aaa",
+      "email": "aaa@gmail.com",
+      "password": "aaa",
+      "id": 11
+    }
+  ],
+  "products": [
+    {
+      "name": "hiiiiiii",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 1
     },
     {
-      "name": "Tomal",
-      "email": "tom@gmail.com",
-      "password": "tom",
+      "name": "",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 2
     },
     {
-      "name": "Rasu",
-      "email": "rasu@gmail.com",
-      "password": "rasu",
+      "name": "",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 3
     },
     {
       "name": "",
-      "email": "",
-      "password": "",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 4
     },
     {
-      "name": "Toukir",
-      "email": "toukir@gmail.com",
-      "password": "Zxc@123",
+      "name": "asdasd",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 5
     },
     {
-      "name": "hi",
-      "email": "hi@gmail.com",
-      "password": "123",
+      "name": "",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 6
     },
     {
       "name": "",
-      "email": "hi@gmail.com",
-      "password": "123",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
       "id": 7
     },
     {
-      "name": "Mohaimen",
-      "email": "mohaimen@gmail.com",
-      "password": "123",
+      "name": "sf",
+      "model": "ll;",
+      "color": ";lk;l",
+      "category": ";lk;lkl;k;l",
+      "price": ";lk;l",
+      "imgUrl": ";lk;lkl;",
+      "description": "jkbkj",
       "id": 8
     },
     {
-      "name": "hello",
-      "email": "hello@gmail.com",
-      "password": "123",
+      "name": "adas",
+      "model": "dasdasd",
+      "color": "asdasd",
+      "category": "asdasd",
+      "price": "asdasd",
+      "imgUrl": "asdasd",
+      "description": "asdad",
       "id": 9
+    },
+    {
+      "name": "Hello",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "model": "",
+      "color": "",
+      "category": "",
+      "price": "",
+      "imgUrl": "",
+      "description": "",
+      "id": 12
     }
-  ],
-  "login": []
+  ]
 }

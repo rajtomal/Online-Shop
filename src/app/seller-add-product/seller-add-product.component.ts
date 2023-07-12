@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductsService } from '../services/products.service';
+import { products } from '../data-type';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -6,11 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./seller-add-product.component.scss']
 })
 export class SellerAddProductComponent {
-  constructor() {
+  addProductMessage: string | undefined;
+  constructor(private productService:ProductsService) {
 
   }
-  ngOnInit(): void { }
-  addProduct(data: object) {
-    console.log(data)
+  ngOnInit(): void { 
+    
   }
+  addProduct(data: products) {
+    this.productService.addProducts(data).subscribe((result)=>{
+      if(result){
+        this.addProductMessage = "Product Added Successfully"
+      }
+      alert(this.addProductMessage)
+    });
+  }
+  
 }

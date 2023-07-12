@@ -8,3 +8,12 @@ export interface logIn{
     email:string,
     password:string
 }
+export interface products{
+    name: string,
+    model: string,
+    price: number,
+    category: string,
+    color:string,
+    image: string,
+    description: string
+}
