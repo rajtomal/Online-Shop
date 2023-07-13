@@ -14,6 +14,8 @@ export interface products{
     price: number,
     category: string,
     color:string,
-    image: string,
-    description: string
+    imgUrl: string,
+    description: string,
+    id:number,
+    seeMore:boolean
 }

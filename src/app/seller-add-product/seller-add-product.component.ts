@@ -20,8 +20,11 @@ export class SellerAddProductComponent {
       if(result){
         this.addProductMessage = "Product Added Successfully"
       }
-      alert(this.addProductMessage)
+      alert(this.addProductMessage);
     });
+    
   }
+
+  
   
 }

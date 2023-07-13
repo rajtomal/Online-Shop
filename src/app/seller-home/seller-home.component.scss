@@ -1,0 +1,90 @@
+.product-list-part{
+    padding: 30px 0;
+}
+.product-list-item {
+    padding: 10px 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    border-radius: 5px;
+}
+.product-img{
+    border-bottom: 1px solid #dadfe8;
+    padding: 10px 20px;
+}
+.product-img img{
+    width: 100%;
+}
+.product-text h3 {
+    font-size: 19px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+.product-text h5 {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0;
+    margin: 0;
+}
+.product-text h5 span{
+    font-size: 16px;
+    font-weight: 400;
+    float: right;
+}
+.product-text h5 p{
+    font-size: 16px;
+    font-weight: 400;
+    float: right;
+    margin-top: 5px;
+}
+.product-text   h4 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 7px;
+    text-align: center;
+    color: rgb(18, 153, 232);
+    background: #eff3fd;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+.product-text   h4 span {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 10px;
+}
+.product-text   p {
+    font-size: 14px;
+    font-weight: 400;
+}
+.seeMore {
+    font-weight: 500;
+    color: #fd4e1d;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+.product-list-text {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.action-btn button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.delete-btn{
+    background-color:red ;
+}
+.update-btn{
+    background-color: green;
+}
+.action-btn svg {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+}
