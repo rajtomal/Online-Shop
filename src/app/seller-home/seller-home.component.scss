@@ -78,13 +78,62 @@
     margin-bottom: 5px;
 }
 .delete-btn{
-    background-color:red ;
+    background-color:#ff3636 ;
 }
 .update-btn{
-    background-color: green;
+    background-color: #0abb0a;
 }
 .action-btn svg {
     width: 20px;
     height: 20px;
     margin-bottom: 4px;
 }
+.input-box input {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-bottom: 15px;
+    height: 40px;
+    padding: 0px 20px;
+    font-size: 14px;
+  }
+  .input-box textarea {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      margin-bottom: 15px;
+      height: 100px;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .update-product-form button {
+        width: 100%;
+        background: #0250c5;
+        border: 0px;
+        cursor: pointer;
+        color: #fff;
+        padding: 9px 20px;
+        border-radius: 3px;
+        box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease-in;
+    }

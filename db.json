@@ -5,12 +5,18 @@
       "email": "aaa@gmail.com",
       "password": "aaa",
       "id": 11
+    },
+    {
+      "name": "hi",
+      "email": "hi@gmail.com",
+      "password": "123",
+      "id": 12
     }
   ],
   "products": [
     {
-      "name": "Apple iPhone 14 Pro Max",
-      "model": "iPhone 14 Pro Max",
+      "name": "Apple iPhone",
+      "model": "Apple iPhone 14 Pro Max",
       "color": "Deep Purple",
       "category": "Smartphone",
       "price": "155,000",
@@ -19,63 +25,43 @@
       "id": 1
     },
     {
-      "name": "Samsung Galaxy",
-      "model": "Samsung Galaxy S23 Ultra",
-      "color": "Cream",
-      "category": "Smartphone ",
-      "price": "197,999",
-      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/samsung/galaxy-s23-ultra/galaxy-s23-ultra-black-500x500.webp",
-      "description": "Model: Galaxy S23 Ultra Display: 6.8 Quad HD+ Dynamic AMOLED 2X, 120Hz, HDR10+ Processor: Qualcomm SM8550-AC Snapdragon 8 Gen 2 (4 nm) Camera: Quad 200+10+10+12 MP on Rear, 12MP Selfie",
-      "id": 2
-    },
-    {
-      "name": "OnePlus Nord",
+      "name": "OnePlus",
       "model": "OnePlus Nord CE 3 Lite",
       "color": "Chromatic Gray",
-      "category": "S",
+      "category": "Smartphone",
       "price": "35,000",
       "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-ce-3-lite-5g/oneplus-nord-ce-3-lite-5g-green-500x500.webp",
       "description": "Model: Nord CE 3 Lite 5G\nDisplay: 6.72\" FHD+ 120 Hz Display\nProcessor: Qualcomm SM6375 Snapdragon 695 5G (6 nm)\nCamera: Triple 108+2+2 MP on Rear, 16MP Front\nFeatures: Side Fingerprint, 67W SUPERVOOC",
       "id": 3
     },
     {
-      "name": "Mohaimen",
-      "model": "iPhone 14 Pro Max",
+      "name": "OnePlus",
+      "model": "OnePlus Nord N20 SE",
       "color": "Deep Purple",
       "category": "Smartphone ",
-      "price": "",
-      "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/2324px-Banana-Single.jpg",
-      "description": "wqertgdfsgrdf",
+      "price": "20490",
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/nord-n20-se/nord-n20-se-green-228x228.webp",
+      "description": "Model: Nord CE 3 Lite 5G\nDisplay: 6.72\" FHD+ 120 Hz Display\nProcessor: Qualcomm SM6375 Snapdragon 695 5G (6 nm)\nCamera: Triple 108+2+2 MP on Rear, 16MP Front\nFeatures: Side Fingerprint, 67W SUPERVOOC",
       "id": 4
     },
     {
-      "name": "qqq",
-      "model": "Samsung Galaxy S23 Ultra",
-      "color": "asdasd",
-      "category": ";lk;lkl;k;l",
-      "price": 3243,
-      "imgUrl": ";lk;lkl;",
-      "description": "ewsdfgcbvsyergfvberdf",
-      "id": 5
-    },
-    {
-      "name": "Mohaimen",
-      "model": "dasdasd",
+      "name": "OnePlus ",
+      "model": "OnePlus 10T 5G",
       "color": "Deep Purple",
       "category": "Smartphone ",
-      "price": 37,
-      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/apple/iphone-14-pro-max/deep-purple/iphone-14-pro-max-deep-purple-01-500x500.webp",
-      "description": "rtdghtrgfbrtfhrthfg",
+      "price": "80000",
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/oneplus/10t-5g/10t-green-500x500.webp",
+      "description": "Model: 10T\nDisplay: 6.7\" FHD+ 120Hz Fluid AMOLED Display\nProcessor: Qualcomm SM8475 Snapdragon 8+ Gen 1 (4 nm)\nCamera: Triple 50+8+2 MP on Rear, 16MP Front\nFeatures: In-display Fingerprint, 150W SUPERVOOC",
       "id": 6
     },
     {
-      "name": "aaa",
-      "model": "rfrfw",
-      "color": "Deep Purple",
-      "category": "Smartphone ",
-      "price": "",
-      "imgUrl": "",
-      "description": "",
+      "name": "Xiaomi Pad ",
+      "model": "Xiaomi Pad 5 Snapdragon 860",
+      "color": "Black",
+      "category": "Pad",
+      "price": "45500",
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/Tablet/Xiaomi/pad-5/xiaomi-pad-5-500x500.jpg",
+      "description": "Model: Xiaomi Pad 5\nDisplay: 11\" WQHD+ (1600 x 2560) 120Hz 500nits\nProcessor: Qualcomm Snapdragon 860\nRAM: 6GB, ROM: 256GB\nBattery: 8720 mAh",
       "id": 7
     }
   ]
