@@ -25,7 +25,7 @@
       "id": 1
     },
     {
-      "name": "OnePlus",
+      "name": "OnePlus Nord",
       "model": "OnePlus Nord CE 3 Lite",
       "color": "Chromatic Gray",
       "category": "Smartphone",
@@ -35,7 +35,7 @@
       "id": 2
     },
     {
-      "name": "OnePlus",
+      "name": "OnePlus Nord",
       "model": "OnePlus Nord N20 SE",
       "color": "Deep Purple",
       "category": "Smartphone ",
@@ -62,7 +62,57 @@
       "price": "45500",
       "imgUrl": "https://www.startech.com.bd/image/cache/catalog/Tablet/Xiaomi/pad-5/xiaomi-pad-5-500x500.jpg",
       "description": "Model: Xiaomi Pad 5\nDisplay: 11\" WQHD+ (1600 x 2560) 120Hz 500nits\nProcessor: Qualcomm Snapdragon 860\nRAM: 6GB, ROM: 256GB\nBattery: 8720 mAh",
-      "id": 5
+      "id": 7
+    },
+    {
+      "name": "Vivo ",
+      "model": "Vivo Y02t",
+      "color": "Orchid Blue",
+      "category": "Smartphone ",
+      "price": 16999,
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/vivo/y02/y02-blue-500x500.webp",
+      "description": "Model: Y02t\nDisplay: 6.51\" HD+ Eye Protection Screen\nProcessor: Mediatek MT6765 Helio P35 (12nm)\nCamera: Single 8MP on Rear, 5MP Front\nFeatures: 5000mAh Battery, 4GB Extended RAM",
+      "id": 8
+    },
+    {
+      "name": "Vivo ",
+      "model": "Vivo Y21T ",
+      "color": "Pearl White",
+      "category": "Smartphone ",
+      "price": "18999",
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/mobile/vivo/y21t/y21t-midnight-blue-500x500.webp",
+      "description": "Model: Y21T\nDisplay: 6.51\" HD+ Halo Display\nProcessor: Qualcomm SM6225 Snapdragon 680 4G (6 nm)\nCamera: Triple 50+2+2 MP on Rear, 8MP Front\nFeatures: 1GB Extended RAM, Side Fingerprint",
+      "id": 9
+    },
+    {
+      "name": "Xiaomi ",
+      "model": "Xiaomi Mi ",
+      "color": "Black",
+      "category": "Monitor",
+      "price": 10999,
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/monitor/xiaomi/mi-1c/mi-1c-1-500x500.jpeg",
+      "description": "Model: Mi 1C\nResolution: FHD (1920 x 1080)\nDisplay: IPS, 60Hz, 6ms\nPorts: HDMI, VGA\nFeatures: Low Blue Light",
+      "id": 10
+    },
+    {
+      "name": "HP ",
+      "model": "HP M24fwa ",
+      "color": "White",
+      "category": "Monitor",
+      "price": 20700,
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/monitor/hp-monitor/m24fwa/m24fwa-01-500x500.webp",
+      "description": "Model: M24fwa\nResolution: FHD (1920 x 1080)\nDisplay: IPS, 75Hz, 5ms GtG\nPorts: HDMI, VGA, Audio port\nFeatures: Low blue light, AMD FreeSync",
+      "id": 11
+    },
+    {
+      "name": "HP ",
+      "model": "HP Victus 16-d0445TX",
+      "color": "Black",
+      "category": "Laptop",
+      "price": 133500,
+      "imgUrl": "https://www.startech.com.bd/image/cache/catalog/laptop/hp-laptop/victus-16-d0678tx/victus-16-d0678tx-01-500x500.jpg",
+      "description": "MPN: 5B868PA\nModel: Victus 16-d0445TX\nProcessor: Intel Core i7-11800H (24M Cache, 2.30 GHz up to 4.60 GHz)\nRAM: 16GB DDR4, Storage: 512GB SSD\nGraphics: RTX 3050 4GB GDDR6\nFeatures: Backlit keyboard, 144Hz 7ms display",
+      "id": 12
     }
   ]
 }

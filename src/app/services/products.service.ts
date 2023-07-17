@@ -24,4 +24,10 @@ export class ProductsService {
   updateProduct(data:products){
     return this.http.put<products>(`http://localhost:3000/products/${data.id}`, data)
   }
+  trendyProducts(){
+    return this.http.get<products[]>(`http://localhost:3000/products?_limit=8`)
+  }
+  searchProducts(query:string){
+    return this.http.get<products[]>(`http://localhost:3000/products?q=${query}`)
+  }
 }

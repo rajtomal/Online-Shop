@@ -11,7 +11,8 @@ export class SellerHomeComponent {
   productList: undefined | products[];
   productGetData: undefined | products;
   expandedItemIds: number[] = [];
-  textSeeMore: string = '';
+  popupSetTimeOUt:string='modal';
+  // textSeeMore: string = '';
 
   constructor(private product: ProductsService) { }
   ngOnInit(): void {
@@ -48,10 +49,10 @@ export class SellerHomeComponent {
     }
     this.product.updateProduct(data).subscribe((result)=>{
       if(result){
-        console.log(result,'product updated')
+        this.listProduct();
+       console.log('product updated Successfully');
       }
-    })
-    this.listProduct();
+    });
 
   }
 }
