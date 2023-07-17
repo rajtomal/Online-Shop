@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { AuthGuard } from './auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
     path:'seller-add-product',
     component:SellerAddProductComponent,
     canActivate:[AuthGuard]
+  },
+  {
+    path:'search/:query',
+    component:SearchComponent
   }
 ];
 

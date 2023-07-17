@@ -77,13 +77,18 @@
 
       <div *ngIf="menuType==='default'" class="col-lg-8 offset-lg-2 col-sm-12">
         <form class="d-flex mt-2 search-box" role="search">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">
+          <input class="form-control" value="{{suggName}}" type="search" #searchData (keyup)="searchProdutsItem($event)" (blur)="hidesuggestion()" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success"  (click)="submitSearchData(searchData.value)" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
               <path fill="currentColor"
                 d="M23 36c-7.2 0-13-5.8-13-13s5.8-13 13-13s13 5.8 13 13s-5.8 13-13 13zm0-24c-6.1 0-11 4.9-11 11s4.9 11 11 11s11-4.9 11-11s-4.9-11-11-11z" />
               <path fill="currentColor" d="m32.682 31.267l8.98 8.98l-1.414 1.414l-8.98-8.98z" /></svg>
           </button>
+          <div class="suggestion-result" *ngIf="this.searchResult">
+              <ul >
+                <li *ngFor="let item of searchResult" style="display: inline-block;" (click)="suggData(item.name)"><a>{{item.name}}</a></li>
+              </ul>
+          </div>
         </form>
       </div>
     </div>

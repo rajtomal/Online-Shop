@@ -1,6 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
 import { tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { ProductsService } from '../services/products.service';
+import { products } from '../data-type';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +11,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   menuType: string = 'default';
   sellerName: string = '';
-  constructor(private route: Router) { }
+  suggName:undefined | string;
+  searchResult:undefined | products[];
+  constructor(private route: Router, private product: ProductsService) { }
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
@@ -32,5 +36,29 @@ export class HeaderComponent {
   logOut() {
     localStorage.removeItem('seller');
     this.route.navigate(['/']);
+  }
+  searchProdutsItem(query: KeyboardEvent) {
+    if (query) {
+      const element = query.target as HTMLInputElement ;
+      this.product.searchProducts(element.value).subscribe((result) => {
+        if(result.length>5){
+          result.length = 5
+        }
+        this.searchResult = result
+      })
+    }
+  }
+  hidesuggestion(){
+    setTimeout(() => {
+      this.searchResult=undefined
+    }, 300);
+  }
+  submitSearchData(data: string){
+    this.route.navigate([`search/${data}`])
+    
+  }
+  suggData(data:string){
+    console.log(data,"click")
+    this.suggName = data
   }
 }

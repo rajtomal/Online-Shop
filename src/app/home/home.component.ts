@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { products } from '../data-type';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +10,6 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 export class HomeComponent {  
   trendyProductsItem: undefined | products[];
 
-  cartIcon=faCartPlus;
 
   constructor(private Product: ProductsService){};
 
