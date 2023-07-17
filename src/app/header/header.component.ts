@@ -55,7 +55,7 @@ export class HeaderComponent {
   }
   submitSearchData(data: string){
     this.route.navigate([`search/${data}`])
-    
+    this.suggName = '';
   }
   suggData(data:string){
     console.log(data,"click")
