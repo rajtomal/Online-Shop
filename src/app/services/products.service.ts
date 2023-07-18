@@ -30,4 +30,7 @@ export class ProductsService {
   searchProducts(query:string){
     return this.http.get<products[]>(`http://localhost:3000/products?q=${query}`)
   }
+  productDetails(id:number){
+    return this.http.get<products>(`http://localhost:3000/products/${id}`)
+  }
 }

@@ -1,8 +1,9 @@
-import { Component, ElementRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { tick } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { products } from '../data-type';
+import { SearchComponent } from '../search/search.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,7 +14,7 @@ export class HeaderComponent {
   sellerName: string = '';
   suggName:undefined | string;
   searchResult:undefined | products[];
-  constructor(private route: Router, private product: ProductsService) { }
+  constructor(private route: Router, private product: ProductsService,private changeDetector: ChangeDetectorRef) { }
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
@@ -58,7 +59,7 @@ export class HeaderComponent {
     this.suggName = '';
   }
   suggData(data:string){
-    console.log(data,"click")
+    // console.log(data,"click")
     this.suggName = data
   }
 }

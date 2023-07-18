@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { products } from '../data-type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,11 @@ export class HomeComponent {
   trendyProductsItem: undefined | products[];
 
 
-  constructor(private Product: ProductsService){};
+  constructor(private Product: ProductsService, private route:Router){};
 
   ngOnInit():void {
     this.Product.trendyProducts().subscribe((result) => {
-      console.log(result)
+      // console.log(result)
       this.trendyProductsItem = result
     })
   }
@@ -33,4 +34,8 @@ export class HomeComponent {
       images : 'https://azse77seaprodsa.blob.core.windows.net/b2b-dr-pickaboocdn/media/dcastalia_hybridslider/image/Big_Banner_9_1_.jpg'
     }
   ]
+  moreDetails(id:number){
+    // console.log(id)
+    this.route.navigate([`product-details/${id}`])
+  }
 }

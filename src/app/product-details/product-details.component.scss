@@ -1,41 +1,40 @@
-.search-product {
-  padding: 30px 0;
-  background: #F7F9FF;
+.product-details{
+    padding: 40px 0;
+    background: #F7F9FF;
 }
-.product-list-item {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: all linear 0.2s;
-    background: #fff;
+.details-img {
+	padding: 10px 20px;
+	background: #fff;
+	margin: 0 50px;
+    border-radius: 10px;
 }
-.product-list-item:hover{
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-.product-img{
-    border-bottom: 1px solid #dadfe8;
-    padding: 10px 20px;
-}
-.product-img img{
+.details-img img{
     width: 100%;
 }
-.product-text h3 {
-    font-size: 19px;
+.details-text{
+    background: #fff;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px 42px;
+}
+.details-text h3 {
+    font-size: 22px;
     font-weight: 600;
     padding: 10px 0;
 }
-.product-text h5 {
+.details-text h5 {
     font-size: 16px;
     font-weight: 600;
-    padding: 5px 0;
+    padding: 8px 0;
     margin: 0;
+    width: 40%;
 }
-.product-text h5 span{
+.details-text h5 span{
     font-size: 16px;
     font-weight: 400;
     float: right;
 }
-.product-text h5 p{
+.details-text h5 p{
     font-size: 16px;
     font-weight: 400;
     float: right;
@@ -45,9 +44,10 @@
     font-size: 24px;
     font-weight: 600;
     text-transform: capitalize;
+    margin-top: 20px;
     margin-bottom: 0;
 }
-.product-text   h4 {
+.details-text   h4 {
     font-size: 20px;
     font-weight: 600;
     padding: 7px;
@@ -57,7 +57,7 @@
     border-radius: 5px;
     margin-top: 12px;
 }
-.product-text   h4 span {
+.details-text   h4 span {
     font-size: 24px;
     font-weight: 900;
     line-height: 10px;

@@ -1,11 +1,13 @@
 .product-list-part{
     padding: 30px 0;
+    background-color: #F7F9FF;
 }
 .product-list-item {
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     transition: all linear 0.2s;
+    background:#fff ;
 }
 .product-list-item:hover{
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;

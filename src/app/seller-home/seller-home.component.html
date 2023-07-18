@@ -13,7 +13,7 @@
             <h5>Category: <span>{{list.category}}</span></h5>
             <h5>Color: <span>{{list.color}}</span></h5>
             <h5 class="text-decoration-underline">Description:</h5>
-            <p>
+            <p> 
               {{(list.seeMore ? list.description : list.description.slice(0, 65))}}
               <button class="seeMore" (click)="seeMoreBtn(list)">{{list.seeMore ? "Less" : "See More"}}</button>
             </p>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { products } from '../data-type';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -8,6 +9,7 @@ import { products } from '../data-type';
   styleUrls: ['./seller-add-product.component.scss']
 })
 export class SellerAddProductComponent {
+  @ViewChild('addProductItem', { static: false }) addProductItem: NgForm | undefined;
   addProductMessage: string | undefined;
   constructor(private productService:ProductsService) {
 
@@ -22,7 +24,6 @@ export class SellerAddProductComponent {
       }
       alert(this.addProductMessage);      
     });
+    this.addProductItem?.resetForm();
   }
-  
-  
 }
