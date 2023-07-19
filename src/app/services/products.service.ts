@@ -10,27 +10,27 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   addProducts(data: products) {
-    return this.http.post('http://localhost:3000/products', data)
+    return this.http.post('https://online-shop-abay.onrender.com/products', data)
   }
   productList() {
-    return this.http.get<products[]>('http://localhost:3000/products')
+    return this.http.get<products[]>('https://online-shop-abay.onrender.com/products')
   }
   deleteProduct(id: number) {
-    return this.http.delete(`http://localhost:3000/products/${id}`)
+    return this.http.delete(`https://online-shop-abay.onrender.com/products/${id}`)
   }
   getProduct(id: number) {
-    return this.http.get<products>(`http://localhost:3000/products/${id}`)
+    return this.http.get<products>(`https://online-shop-abay.onrender.com/products/${id}`)
   }
   updateProduct(data:products){
-    return this.http.put<products>(`http://localhost:3000/products/${data.id}`, data)
+    return this.http.put<products>(`https://online-shop-abay.onrender.com/products/${data.id}`, data)
   }
   trendyProducts(){
-    return this.http.get<products[]>(`http://localhost:3000/products?_limit=8`)
+    return this.http.get<products[]>(`https://online-shop-abay.onrender.com/products?_limit=8`)
   }
   searchProducts(query:string){
-    return this.http.get<products[]>(`http://localhost:3000/products?q=${query}`)
+    return this.http.get<products[]>(`https://online-shop-abay.onrender.com/products?q=${query}`)
   }
   productDetails(id:number){
-    return this.http.get<products>(`http://localhost:3000/products/${id}`)
+    return this.http.get<products>(`https://online-shop-abay.onrender.com/products/${id}`)
   }
 }

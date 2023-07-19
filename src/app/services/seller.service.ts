@@ -17,7 +17,7 @@ export class SellerService {
 
   //post sign up data
   userSignUp(data: SignUp) {
-    this.http.post('http://localhost:3000/seller', data, { observe: 'response' }).subscribe((result) => {
+    this.http.post('https://online-shop-abay.onrender.com/seller', data, { observe: 'response' }).subscribe((result) => {
       // Behavior true
       this.isSellerLoggedIn.next(true);
       // localStorage Save Data
@@ -27,7 +27,7 @@ export class SellerService {
     });
   }
   userLogIn(data: logIn) {
-    this.http.post('http://localhost:3000/login', data, { observe: 'response' }).subscribe(() => {
+    this.http.post('https://online-shop-abay.onrender.com/login', data, { observe: 'response' }).subscribe(() => {
 
     })
   }
@@ -42,7 +42,7 @@ export class SellerService {
 
   logIn(data: logIn) {
     // console.log(data)
-    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result: any) => {
+    this.http.get(`https://online-shop-abay.onrender.com/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result: any) => {
       if (result && result.body && result.body.length) {
         localStorage.setItem('seller', JSON.stringify(result.body));
         // path defined
