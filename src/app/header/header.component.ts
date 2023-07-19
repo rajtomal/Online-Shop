@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { products } from '../data-type';
 import { SearchComponent } from '../search/search.component';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,7 @@ import { SearchComponent } from '../search/search.component';
 export class HeaderComponent {
   menuType: string = 'default';
   sellerName: string = '';
-  suggName:undefined | string;
+  blank: undefined | string;
   searchResult:undefined | products[];
   constructor(private route: Router, private product: ProductsService,private changeDetector: ChangeDetectorRef) { }
   ngOnInit(): void {
@@ -50,16 +51,17 @@ export class HeaderComponent {
     }
   }
   hidesuggestion(){
-    setTimeout(() => {
-      this.searchResult=undefined
-    }, 300);
+    this.searchResult=undefined
+    // setTimeout(() => {
+    // }, 300);
   }
   submitSearchData(data: string){
     this.route.navigate([`search/${data}`])
-    this.suggName = '';
+    data = ''
   }
-  suggData(data:string){
+  suggData(data:number){
     // console.log(data,"click")
-    this.suggName = data
+    this.route.navigate([`product-details/${data}`])
+    this.blank = ''
   }
 }

@@ -22,7 +22,7 @@
                   <a class="nav-link active" aria-current="page" routerLink="seller-auth">Seller</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page">LogIn</a>
+                  <a routerLink="/user-auth" class="nav-link active" aria-current="page">LogIn/SignUp</a>
                 </li>
               </ul>
               <ul *ngSwitchCase="'seller'" class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -77,7 +77,7 @@
 
       <div *ngIf="menuType==='default'" class="col-lg-8 offset-lg-2 col-sm-12">
         <form class="d-flex mt-2 search-box" role="search">
-          <input class="form-control" value="{{suggName}}" type="search" #searchData (keyup)="searchProdutsItem($event)" (blur)="hidesuggestion()" placeholder="Search" aria-label="Search">
+          <input class="form-control" value="{{blank}}" type="search" #searchData (keyup)="searchProdutsItem($event)" (blur)="hidesuggestion()" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success"  (click)="submitSearchData(searchData.value)" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
               <path fill="currentColor"
@@ -86,7 +86,7 @@
           </button>
           <div class="suggestion-result" *ngIf="this.searchResult">
               <ul >
-                <li *ngFor="let item of searchResult" style="display: inline-block;" (click)="suggData(item.name)"><a>{{item.name}}</a></li>
+                <li *ngFor="let item of searchResult" style="display: inline-block;" ><a (mousedown)="suggData(item.id)">{{item.name}}</a></li>
               </ul>
           </div>
         </form>

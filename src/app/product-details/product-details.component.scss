@@ -87,3 +87,53 @@
 	margin-right: 10px;
 	margin-bottom: 1px;
 }
+.details-btn {
+    padding: 12px 0;
+}
+.details-btn button {
+    border: navajowhite;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #5b72ff;
+    color: #fff;
+    margin-right: 10px;
+}
+.details-btn .buy-btn {
+    background:linear-gradient(90deg, rgb(255, 122, 31) 0%, rgb(255, 55, 36) 100%);
+}
+.quantity-group{
+    margin: 2px 0;
+    display: inline-block;
+    position: relative;
+}
+.quantity-group input {
+    height: 36px;
+    text-align: center;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+.quantity-group .minus{
+    height: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.quantity-group .plus{
+    height: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+.quantity-group button svg{
+    margin-bottom: 2px;
+}

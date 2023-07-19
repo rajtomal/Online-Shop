@@ -9,6 +9,7 @@ import { products } from '../data-type';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
+  productQuantity:number=1;
   productDetailsItem: undefined | products;
   constructor(private product: ProductsService, private activeRouter: ActivatedRoute) { }
   ngOnInit(): void {
@@ -16,10 +17,17 @@ export class ProductDetailsComponent {
   }
   detailsProduct(){
     let ProductId: number = Number(this.activeRouter.snapshot.paramMap.get('id'));
-    this.product.productDetails(ProductId).subscribe((result) => {
+    ProductId && this.product.productDetails(ProductId).subscribe((result) => {
       this.productDetailsItem = result
       console.log(this.productDetailsItem)
     })
   }
+  productQuntity(val:string){
+    if(this.productQuantity < 20 && val == 'plus'){
+      this.productQuantity+=1
+    }else if(this.productQuantity > 1 && val == 'min'){
+      this.productQuantity-=1
+    }
+  }
 
-}
+} 

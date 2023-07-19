@@ -1,0 +1,57 @@
+<section class="seller-auth-part user-auth-part">
+    <div class="container">
+      <div class="row full-width">
+        <div class="col-lg-8 two-part">
+          <div class="seller-text">
+            <h1>WELCOME</h1>
+            <div class="seller-img">
+              <img src="../../assets/images/user.svg" alt="seller-signup">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Modi, illo non exercitationem delectus ut
+              consequatur.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 two-part">
+          <div class="seller-form">
+            <div *ngIf="showLogin" class="all-signup">
+              <h1>Create an account</h1>
+              <form #sellerSignUp="ngForm" (ngSubmit)="signUpUser(sellerSignUp.value)" class="from-box">
+                <div class="input-box">
+                  <input type="text" ngModel name="name" placeholder="Enter Name">
+                </div>
+                <div class="input-box">
+                  <input type="email" ngModel name="email" placeholder="Enter email" required>
+                </div>
+                <div class="input-box">
+                  <input type="password" ngModel name="password" placeholder="Enter password" required>
+                </div>
+                <button>Sign Up</button>
+              </form>
+              <p>Already have an account? 
+                <a (click)="loginPageUser()">LogIn</a>
+            </p>
+            </div>
+  
+  
+            <div *ngIf="!showLogin" class="all-signup">
+              <h1>Log In</h1>
+              <form #sellerLogIn="ngForm" (ngSubmit)="logInUser(sellerLogIn.value)" class="from-box">
+                <div class="input-box">
+                  <input type="email" ngModel name="email" placeholder="Enter email" required>
+                </div>
+                <div class="input-box">
+                  <input type="password" ngModel name="password" placeholder="Enter password" required>
+                </div>
+                <p class="err-message">{{userLoginError}}</p>
+                <button>Log In</button>
+              </form>
+              <p>Don't have any account? 
+                <a (click)="signUpPageUser()">SignUp</a>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

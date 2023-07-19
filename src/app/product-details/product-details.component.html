@@ -1,12 +1,4 @@
-<!-- <div>
-  <img src="{{productDetailsItem?.imgUrl}}" alt="">
-  <h3>{{productDetailsItem?.name}}</h3>
-  <h3>{{productDetailsItem?.category}}</h3>
-  <h3>{{productDetailsItem?.model}}</h3>
-  <h3>{{productDetailsItem?.color}}</h3>
-  <h3>{{productDetailsItem?.description}}</h3>
-  <p>hi</p>
-</div> -->
+
 <div class="product-details">
     <div class="container">
         <div class="row">
@@ -23,6 +15,15 @@
                     <h5>Color: <span>{{productDetailsItem?.color}}</span></h5>
                     <h5>Description: </h5>
                     <p>{{productDetailsItem?.description}}</p>
+                    <div class="quantity-group">
+                        <button (click)="productQuntity('min')" class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/></svg></button>
+                        <input disabled type="number" value="{{productQuantity}}">
+                        <button (click)="productQuntity('plus')" class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.75 7.75h-10m5-5v10"/></svg></button>
+                    </div>
+                    <div class="details-btn">
+                        <button>Add to Cart</button>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
                 </div>
             </div>
         </div>
