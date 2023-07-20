@@ -17,6 +17,8 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import { LoderCommonComponent } from './loder-common/loder-common.component';
+import { AppHttpInterceptor } from './app-http-interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
     SearchComponent,
     FooterComponent,
     ProductDetailsComponent,
-    UserAuthComponent
+    UserAuthComponent,
+    LoderCommonComponent,
   ],
   imports: [
     BrowserModule,

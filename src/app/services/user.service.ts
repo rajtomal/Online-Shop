@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
+  loader = new BehaviorSubject<boolean>(false)
+
   isUserLoggedIn = new BehaviorSubject<boolean>(false);
   isLogInError = new EventEmitter<boolean>(false);
 

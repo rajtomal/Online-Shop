@@ -9,6 +9,7 @@ import { SellerAddProductComponent } from './seller-add-product/seller-add-produ
 import { SearchComponent } from './search/search.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import { LoderCommonComponent } from './loder-common/loder-common.component';
 
 const routes: Routes = [
   {

@@ -8,6 +8,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SellerService {
+  loader = new BehaviorSubject<boolean>(false)
+
   isSellerLoggedIn = new BehaviorSubject<boolean>(false);
   isLogInError = new EventEmitter<boolean>(false)
 

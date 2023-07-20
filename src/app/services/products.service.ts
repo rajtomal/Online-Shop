@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { products } from '../data-type';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+
+  loader = new BehaviorSubject<boolean>(false)
 
   constructor(private http: HttpClient) { }
 
