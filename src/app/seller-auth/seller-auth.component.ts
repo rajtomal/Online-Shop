@@ -19,14 +19,14 @@ export class SellerAuthComponent {
   }
   signUp(data:SignUp):void{
     // post data for seller service
-    this.seller.userSignUp(data)
+    this.seller.sellerSignUp(data)
     console.log(data,"seller data")
   }
   logIn(data:logIn):void{
     this.logInError='';
     // console.log(data)
     // post data for seller service 
-    this.seller.logIn(data)
+    this.seller.sellerlogIn(data)
     this.seller.isLogInError.subscribe((isError)=>{
       if(isError){
         this.logInError ="Email & Password is not Correct"

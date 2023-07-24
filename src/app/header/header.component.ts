@@ -13,21 +13,25 @@ import { NgForm } from '@angular/forms';
 export class HeaderComponent {
   menuType: string = 'default';
   sellerName: string = '';
+  userName: undefined | string;
   blank: undefined | string;
-  searchResult:undefined | products[];
-  constructor(private route: Router, private product: ProductsService,private changeDetector: ChangeDetectorRef) { }
+  searchResult: undefined | products[];
+  constructor(private route: Router, private product: ProductsService, private changeDetector: ChangeDetectorRef) { }
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           console.log("login seller")
+          let sellerStore: any = localStorage.getItem('seller');
+          let sellerData: any = sellerStore && JSON.parse(sellerStore);
+          this.sellerName = sellerData.name;
           this.menuType = 'seller';
-          // seller name to show in display
-          if (localStorage.getItem('seller')) {
-            let sellerStore: any = localStorage.getItem('seller');
-            let sellerData: any = sellerStore && JSON.parse(sellerStore)[0];
-            this.sellerName = sellerData.name;
-          }
+        } else if (localStorage.getItem('user')) {
+          console.log("login user")
+          let userStore: any = localStorage.getItem('user');
+          let userData: any = userStore && JSON.parse(userStore);
+          this.userName = userData.name;
+          this.menuType = 'user';
         } else {
           console.log("not seller")
           this.menuType = 'default';
@@ -36,30 +40,34 @@ export class HeaderComponent {
     })
   }
   logOut() {
-    localStorage.removeItem('seller');
+    if(localStorage.getItem('seller')){
+      localStorage.removeItem('seller');
+    }else if(localStorage.getItem('user')){
+      localStorage.removeItem('user');
+    }
     this.route.navigate(['/']);
   }
   searchProdutsItem(query: KeyboardEvent) {
     if (query) {
-      const element = query.target as HTMLInputElement ;
+      const element = query.target as HTMLInputElement;
       this.product.searchProducts(element.value).subscribe((result) => {
-        if(result.length>5){
+        if (result.length > 5) {
           result.length = 5
         }
         this.searchResult = result
       })
     }
   }
-  hidesuggestion(){
-    this.searchResult=undefined
+  hidesuggestion() {
+    this.searchResult = undefined
     // setTimeout(() => {
     // }, 300);
   }
-  submitSearchData(data: string){
+  submitSearchData(data: string) {
     this.route.navigate([`search/${data}`])
     data = ''
   }
-  suggData(data:number){
+  suggData(data: number) {
     // console.log(data,"click")
     this.route.navigate([`product-details/${data}`])
     this.blank = ''
