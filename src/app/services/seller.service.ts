@@ -38,10 +38,6 @@ export class SellerService {
     if (localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true);
       this.router.navigate(['seller-home']);
-    }else if (localStorage.getItem('sellerLogin')) {
-      this.isSellerLoggedIn.next(true);
-      this.router.navigate(['seller-home']);
-      console.log("seller login works")
     }
   }
   // login data
@@ -50,7 +46,7 @@ export class SellerService {
     // console.log(data)
     this.http.get(`https://online-shop-abay.onrender.com/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result: any) => {
       if (result && result.body && result.body.length) {
-        localStorage.setItem('sellerLogin', JSON.stringify(result.body));
+        localStorage.setItem('seller', JSON.stringify(result.body[0]));
         // path defined
         this.router.navigate(['seller-home']);
         console.log(" log In sucess")

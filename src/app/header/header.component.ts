@@ -27,13 +27,6 @@ export class HeaderComponent {
           let sellerData: any = sellerStore && JSON.parse(sellerStore);
           this.sellerName = sellerData.name;
           this.menuType = 'seller';
-        } else if (localStorage.getItem('sellerLogin')) {
-          // login seller
-          console.log("logIn seller")
-          let sellerLoginStore: any = localStorage.getItem('sellerLogin');
-          let sellerLoginData: any = sellerLoginStore && JSON.parse(sellerLoginStore)[0];
-          this.sellerName = sellerLoginData.name;
-          this.menuType = 'seller';
         } else if (localStorage.getItem('user')) {
           // signup seller
           console.log("SignUp user")
@@ -41,14 +34,7 @@ export class HeaderComponent {
           let userData: any = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType = 'user';
-        } else if (localStorage.getItem('userLogin')) {
-          // login seller
-          console.log("LogIn user")
-          let userLoginStore: any = localStorage.getItem('userLogin');
-          let userLoginData: any = userLoginStore && JSON.parse(userLoginStore)[0];
-          this.userName = userLoginData.name;
-          this.menuType = 'user';
-        } else {
+        }else {
           console.log("not seller")
           this.menuType = 'default';
         }
@@ -59,14 +45,8 @@ export class HeaderComponent {
     if (localStorage.getItem('seller')) {
       localStorage.removeItem('seller');
       this.route.navigate(['']);
-    }else if (localStorage.getItem('sellerLogin')) {
-      localStorage.removeItem('sellerLogin');
-      this.route.navigate(['']);
     } else if (localStorage.getItem('user')) {
       localStorage.removeItem('user');
-      this.route.navigate(['']);
-    } else if (localStorage.getItem('userLogin')) {
-      localStorage.removeItem('userLogin');
       this.route.navigate(['']);
     }
   }

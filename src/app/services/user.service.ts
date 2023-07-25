@@ -29,7 +29,7 @@ export class UserService {
   logInUser(data:logIn){
     this.http.get(`https://online-shop-abay.onrender.com/userData?email=${data.email}&password=${data.password}`, { observe:'response' }).subscribe((result:any)=>{
       if(result && result.body && result.body.length){
-        localStorage.setItem('userLogin', JSON.stringify(result.body))
+        localStorage.setItem('user', JSON.stringify(result.body[0]))
         console.log('user Login')
         this.route.navigate([''])
       }else{
@@ -37,5 +37,10 @@ export class UserService {
         this.isLogInError.emit(true)
       }
     })
+  }
+  userAuthReload(){
+    if(localStorage.getItem('user')){
+      this.route.navigate(['/'])
+    }
   }
 }

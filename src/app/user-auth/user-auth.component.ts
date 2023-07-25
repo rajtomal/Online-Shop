@@ -12,7 +12,7 @@ export class UserAuthComponent {
   userLoginError:string=''
   constructor(private user: UserService) { }
   ngOnInit(): void {
-
+    this.user.userAuthReload();
   }
   logInUser(data: logIn) {
     this.user.logInUser(data);
