@@ -21,16 +21,32 @@ export class HeaderComponent {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
-          console.log("login seller")
+          // signup seller
+          console.log("SignUp seller")
           let sellerStore: any = localStorage.getItem('seller');
           let sellerData: any = sellerStore && JSON.parse(sellerStore);
           this.sellerName = sellerData.name;
           this.menuType = 'seller';
+        } else if (localStorage.getItem('sellerLogin')) {
+          // login seller
+          console.log("logIn seller")
+          let sellerLoginStore: any = localStorage.getItem('sellerLogin');
+          let sellerLoginData: any = sellerLoginStore && JSON.parse(sellerLoginStore)[0];
+          this.sellerName = sellerLoginData.name;
+          this.menuType = 'seller';
         } else if (localStorage.getItem('user')) {
-          console.log("login user")
+          // signup seller
+          console.log("SignUp user")
           let userStore: any = localStorage.getItem('user');
           let userData: any = userStore && JSON.parse(userStore);
           this.userName = userData.name;
+          this.menuType = 'user';
+        } else if (localStorage.getItem('userLogin')) {
+          // login seller
+          console.log("LogIn user")
+          let userLoginStore: any = localStorage.getItem('userLogin');
+          let userLoginData: any = userLoginStore && JSON.parse(userLoginStore)[0];
+          this.userName = userLoginData.name;
           this.menuType = 'user';
         } else {
           console.log("not seller")
@@ -40,12 +56,14 @@ export class HeaderComponent {
     })
   }
   logOut() {
-    if(localStorage.getItem('seller')){
+    if (localStorage.getItem('seller')) {
       localStorage.removeItem('seller');
-    }else if(localStorage.getItem('user')){
+    } else if (localStorage.getItem('user')) {
       localStorage.removeItem('user');
+    } else if (localStorage.getItem('userLogin')) {
+      localStorage.removeItem('userLogin');
     }
-    this.route.navigate(['/']);
+    this.route.navigate(['']);
   }
   searchProdutsItem(query: KeyboardEvent) {
     if (query) {

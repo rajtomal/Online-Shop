@@ -29,10 +29,11 @@ export class UserService {
   logInUser(data:logIn){
     this.http.get(`https://online-shop-abay.onrender.com/userData?email=${data.email}&password=${data.password}`, { observe:'response' }).subscribe((result:any)=>{
       if(result && result.body && result.body.length){
+        localStorage.setItem('userLogin', JSON.stringify(result.body))
         console.log('user Login')
-      this.route.navigate([''])
+        this.route.navigate([''])
       }else{
-        console.log("uger not login")
+        console.log("user not login")
         this.isLogInError.emit(true)
       }
     })

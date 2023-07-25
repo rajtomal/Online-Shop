@@ -117,7 +117,7 @@
         </nav>
       </div>
 
-      <div *ngIf="menuType==='default'" class="col-lg-8 offset-lg-2 col-sm-12">
+      <div *ngIf="menuType==='default' || menuType === 'user'" class="col-lg-8 offset-lg-2 col-sm-12">
         <form class="d-flex mt-2 search-box" role="search">
           <input class="form-control" value="{{blank}}" type="search" #searchData (keyup)="searchProdutsItem($event)"
             (blur)="hidesuggestion()" placeholder="Search" aria-label="Search">

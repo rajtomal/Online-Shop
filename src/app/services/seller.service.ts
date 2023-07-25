@@ -47,7 +47,7 @@ export class SellerService {
     this.http.get(`https://online-shop-abay.onrender.com/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result: any) => {
       console.log(result)
       if (result && result.body && result.body.length) {
-        localStorage.setItem('seller', JSON.stringify(result.body));
+        localStorage.setItem('sellerLogin', JSON.stringify(result.body));
         // path defined
         this.router.navigate(['seller-home']);
         console.log(" log In sucess")
