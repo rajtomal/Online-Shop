@@ -58,12 +58,17 @@ export class HeaderComponent {
   logOut() {
     if (localStorage.getItem('seller')) {
       localStorage.removeItem('seller');
+      this.route.navigate(['']);
+    }else if (localStorage.getItem('sellerLogin')) {
+      localStorage.removeItem('sellerLogin');
+      this.route.navigate(['']);
     } else if (localStorage.getItem('user')) {
       localStorage.removeItem('user');
+      this.route.navigate(['']);
     } else if (localStorage.getItem('userLogin')) {
       localStorage.removeItem('userLogin');
+      this.route.navigate(['']);
     }
-    this.route.navigate(['']);
   }
   searchProdutsItem(query: KeyboardEvent) {
     if (query) {

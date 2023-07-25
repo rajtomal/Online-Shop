@@ -41,10 +41,10 @@
                   <a class="nav-link active" aria-current="page" routerLink="">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" routerLink="seller-home">List</a>
+                  <a class="nav-link active" aria-current="page">List</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" routerLink="seller-add-product">Product</a>
+                  <a class="nav-link active" aria-current="page">Product</a>
                 </li>
               </ul>
 
@@ -114,10 +114,10 @@
               </div>
             </div>
           </div>
-        </nav>
+        </nav> 
       </div>
 
-      <div *ngIf="menuType==='default' || menuType === 'user'" class="col-lg-8 offset-lg-2 col-sm-12">
+      <div *ngIf="menuType === 'default' || menuType === 'user'" class="col-lg-8 offset-lg-2 col-sm-12">
         <form class="d-flex mt-2 search-box" role="search">
           <input class="form-control" value="{{blank}}" type="search" #searchData (keyup)="searchProdutsItem($event)"
             (blur)="hidesuggestion()" placeholder="Search" aria-label="Search">

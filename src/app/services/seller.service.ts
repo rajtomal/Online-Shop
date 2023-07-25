@@ -33,12 +33,7 @@ export class SellerService {
 
     })
   }
-  reloadSeller() {
-    if (localStorage.getItem('seller')) {
-      this.isSellerLoggedIn.next(true);
-      this.router.navigate(['seller-home']);
-    }
-  }
+  
 
   // login data
 
@@ -56,5 +51,15 @@ export class SellerService {
         this.isLogInError.emit(true)
       }
     })
+  }
+  reloadSeller() {
+    if (localStorage.getItem('seller')) {
+      this.isSellerLoggedIn.next(true);
+      this.router.navigate(['seller-home']);
+    }
+    else if (localStorage.getItem('sellerLogin')) {
+      this.isSellerLoggedIn.next(true);
+      this.router.navigate(['seller-home']);
+    }
   }
 }
