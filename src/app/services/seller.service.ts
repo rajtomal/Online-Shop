@@ -34,13 +34,21 @@ export class SellerService {
     })
   }
   
-
+  reloadSeller() { 
+    if (localStorage.getItem('seller')) {
+      this.isSellerLoggedIn.next(true);
+      this.router.navigate(['seller-home']);
+    }else if (localStorage.getItem('sellerLogin')) {
+      this.isSellerLoggedIn.next(true);
+      this.router.navigate(['seller-home']);
+      console.log("seller login works")
+    }
+  }
   // login data
 
   sellerlogIn(data: logIn) {
     // console.log(data)
     this.http.get(`https://online-shop-abay.onrender.com/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result: any) => {
-      console.log(result)
       if (result && result.body && result.body.length) {
         localStorage.setItem('sellerLogin', JSON.stringify(result.body));
         // path defined
@@ -52,14 +60,5 @@ export class SellerService {
       }
     })
   }
-  reloadSeller() {
-    if (localStorage.getItem('seller')) {
-      this.isSellerLoggedIn.next(true);
-      this.router.navigate(['seller-home']);
-    }
-    else if (localStorage.getItem('sellerLogin')) {
-      this.isSellerLoggedIn.next(true);
-      this.router.navigate(['seller-home']);
-    }
-  }
+ 
 }
