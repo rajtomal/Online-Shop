@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserAuthComponent {
   showLogin: boolean = false;
-  userLoginError:string=''
+  userLoginError:undefined | string;
   constructor(private user: UserService) { }
   ngOnInit(): void {
     this.user.userAuthReload();
@@ -19,6 +19,9 @@ export class UserAuthComponent {
     this.user.isLogInError.subscribe((isError) => {
       if(isError){
         this.userLoginError = 'Email & Password is not Correct';
+        setTimeout(() => {
+          this.userLoginError = undefined
+        }, 3000);
       }
     })
   }

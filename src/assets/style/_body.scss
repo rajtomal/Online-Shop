@@ -1,4 +1,14 @@
 // seller auto signup page start
+
+.input-validation {
+  margin: 0;
+  padding: 0;
+  font-size: 14px !important;
+  color: red;
+  text-align: right;
+  padding: 0 40px;
+}
+
 .seller-auth-part {
     padding: 50px 0;
     overflow: hidden;
@@ -72,7 +82,7 @@
     padding: 8px 10px;
     font-size: 16px;
     color: #000;
-    margin-bottom: 15px;
+    margin: 7px 0;
     border-bottom: 1px solid #E6E6E6;
     border-top: 0;
     border-right: 0;
@@ -91,7 +101,7 @@
     background: linear-gradient(90deg, rgba(255, 122, 31) 0%, rgba(255, 55, 36) 100%);
     border: none;
     border-radius: 8px;
-    margin-top: 8px;
+    margin-top: 15px;
   }
   .seller-auth-part .all-signup{
     text-align: center;

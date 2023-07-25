@@ -11,7 +11,7 @@ import { SignUp, logIn } from '../data-type';
 export class SellerAuthComponent {
 
   showLogin = false;
-  logInError:string='';
+  logInError: undefined | string;
 
   constructor(private seller:SellerService, private router: Router){};
   ngOnInit():void{
@@ -30,6 +30,9 @@ export class SellerAuthComponent {
     this.seller.isLogInError.subscribe((isError)=>{
       if(isError){
         this.logInError ="Email & Password is not Correct"
+        setTimeout(() => {
+          this.logInError = undefined
+        }, 3000);
       }
     })
 

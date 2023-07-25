@@ -18,7 +18,7 @@ export class UserService {
 
   userSignUp(data: SignUp) {
     this.http.post(`https://online-shop-abay.onrender.com/userData`, data, { observe: 'response' }).subscribe((result) => {
-      if(result){
+      if(result && result.body){
         localStorage.setItem('user', JSON.stringify(result.body))
         this.isUserLoggedIn.next(true);
         this.route.navigate([''])
