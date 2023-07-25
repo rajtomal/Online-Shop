@@ -17,15 +17,18 @@
             <h1>Create an account</h1>
             <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="from-box">
               <div class="input-box">
-                <input type="text" ngModel name="name" placeholder="Enter Name">
+                <input type="text" ngModel name="name" placeholder="Enter Name" #name="ngModel" minlength="3" maxlength="10" required>
               </div>
+              <p *ngIf="name.invalid && name.touched" class="input-validation">Enter 3 to 10 character Name</p>
               <div class="input-box">
-                <input type="email" ngModel name="email" placeholder="Enter email" required>
+                <input type="email" ngModel name="email" placeholder="Enter email" #email="ngModel" email required>
               </div>
+              <p *ngIf="email.invalid && email.touched" class="input-validation">Enter valid Email</p>
               <div class="input-box">
-                <input type="password" ngModel name="password" placeholder="Enter password" required>
+                <input type="password" ngModel name="password" placeholder="Enter password" #password="ngModel" minlength="4" maxlength="10" required>
               </div>
-              <button>Sign Up</button>
+              <p *ngIf="password.invalid && password.touched" class="input-validation">Enter 4 to 10 character Password</p>
+              <button [disabled]="sellerSignUp.invalid">Sign Up</button>
             </form>
             <p>Already have an account? <a (click)="loginPage()">LogIn</a></p>
           </div>
@@ -35,13 +38,15 @@
             <h1>Log In</h1>
             <form #sellerLogIn="ngForm" (ngSubmit)="logIn(sellerLogIn.value)" class="from-box">
               <div class="input-box">
-                <input type="email" ngModel name="email" placeholder="Enter email" required>
+                <input type="email" ngModel name="email" placeholder="Enter email" #email="ngModel" email required>
               </div>
+              <p *ngIf="email.invalid && email.touched" class="input-validation">Enter valid Email</p>
               <div class="input-box">
-                <input type="password" ngModel name="password" placeholder="Enter password" required>
+                <input type="password" ngModel name="password" placeholder="Enter password" #password="ngModel" minlength="4" maxlength="10" required>
               </div>
+              <p *ngIf="password.invalid && password.touched" class="input-validation">Enter valid Password</p>
               <p class="err-message">{{logInError}}</p>
-              <button>Log In</button>
+              <button [disabled]="sellerLogIn.invalid">Log In</button>
             </form>
             <p>Don't have any account? <a (click)="signUpPage()">SignUp</a></p>
           </div>
