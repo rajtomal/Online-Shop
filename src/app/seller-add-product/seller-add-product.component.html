@@ -12,27 +12,34 @@
           <p>Add your New Product and Grow your Business</p>
           <form #addProductItem="ngForm" (submit)="addProduct(addProductItem.value)">
             <div class="input-box">
-              <input type="text" ngModel name="name" placeholder="Product Name" required>
+              <input type="text" ngModel name="name" placeholder="Product Name" #name="ngModel" required>
             </div>
+            <p *ngIf="name.invalid && name.touched" class="input-validation">Enter Name</p>
             <div class="input-box">
-              <input type="text" ngModel name="model" placeholder="Product Model" required>
+              <input type="text" ngModel name="model" placeholder="Product Model" #model="ngModel" required>
             </div>
+            <p *ngIf="model.invalid && model.touched" class="input-validation">Enter Product Model</p>
             <div class="input-box">
-              <input type="text" ngModel name="color" placeholder="Product Color" required>
+              <input type="text" ngModel name="color" placeholder="Product Color" #color="ngModel" required>
             </div>
+            <p *ngIf="color.invalid && color.touched" class="input-validation">Enter Product Color</p>
             <div class="input-box">
-              <input type="text" ngModel name="category" placeholder="Product Category" required>
+              <input type="text" ngModel name="category" placeholder="Product Category" #category="ngModel" required>
             </div>
+            <p *ngIf="category.invalid && category.touched" class="input-validation">Enter Product Category</p>
             <div class="input-box">
-              <input type="number" ngModel name="price" placeholder="Product Price" required>
+              <input type="number" ngModel name="price" placeholder="Product Price" #price="ngModel" required>
             </div>
+            <p *ngIf="price.invalid && price.touched" class="input-validation">Enter Product Price</p>
             <div class="input-box">
-              <input type="text" ngModel name="imgUrl" placeholder="Product Images Url" required>
+              <input type="text" ngModel name="imgUrl" placeholder="Product Images Url" #imgUrl="ngModel" required>
             </div>
+            <p *ngIf="imgUrl.invalid && imgUrl.touched" class="input-validation">Enter Product Images Url</p>
             <div class="input-box">
-              <textarea type="text" ngModel name="description" placeholder="Product Description" required></textarea>
+              <textarea type="text" ngModel name="description" placeholder="Product Description" #description="ngModel" required></textarea>
             </div>
-            <button>ADD PRODUCT</button>
+            <p *ngIf="description.invalid && description.touched" class="input-validation">Enter Product Description</p>
+            <button [disabled]="addProductItem.invalid">ADD PRODUCT</button>
           </form>
         </div>
       </div>
