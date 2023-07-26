@@ -15,6 +15,7 @@ export class HeaderComponent {
   sellerName: string = '';
   userName: undefined | string;
   blank: undefined | string;
+  showCart = 0;
   searchResult: undefined | products[];
   constructor(private route: Router, private product: ProductsService, private changeDetector: ChangeDetectorRef) { }
   ngOnInit(): void {
@@ -34,11 +35,20 @@ export class HeaderComponent {
           let userData: any = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType = 'user';
-        }else {
+        } else {
           console.log("not seller")
           this.menuType = 'default';
         }
       }
+    });
+
+
+    let cartData = localStorage.getItem('localCart')
+    if(cartData){
+      this.showCart = JSON.parse(cartData).length
+    }
+    this.product.showCartQty.subscribe((result) => {
+      this.showCart = result.length
     })
   }
   logOut() {

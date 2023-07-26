@@ -17,5 +17,6 @@ export interface products{
     imgUrl: string,
     description: string,
     id:number,
-    seeMore:boolean
+    seeMore:boolean,
+    addCartQty: undefined | number
 }
