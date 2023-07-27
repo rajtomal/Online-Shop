@@ -48,4 +48,14 @@ export class ProductsService {
     }
     this.showCartQty.emit(cartData)
   }
+  removeCartQtyLocal(productId:number){
+    let cartData = localStorage.getItem('localCart');
+    if(cartData){
+      let items:products[] = JSON.parse(cartData)
+      items = items.filter((item:products) => {
+        return productId === item.id;
+      })
+      console.log(items)
+    }
+  }
 }

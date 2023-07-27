@@ -21,6 +21,20 @@ export class ProductDetailsComponent {
     ProductId && this.product.productDetails(ProductId).subscribe((result) => {
       this.productDetailsItem = result
       // console.log(this.productDetailsItem)
+
+      // remove cart code
+      let cartData = localStorage.getItem('localCart')
+      if(ProductId && cartData){
+        let itemCart = JSON.parse(cartData);
+        itemCart = itemCart.filter((item:products)=>{
+          ProductId == item.id
+        })
+        if(itemCart.length){
+          this.removeCart = true
+        }else{
+          this.removeCart = false
+        }
+      }
     })
   }
   productQuntity(val: string) {
@@ -41,6 +55,6 @@ export class ProductDetailsComponent {
   }
   removeToCart(id: any) {
     this.removeCart = false
+    this.product.removeCartQtyLocal(id)
   }
-
-} 
+}
