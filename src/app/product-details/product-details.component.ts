@@ -27,12 +27,15 @@ export class ProductDetailsComponent {
       if(ProductId && cartData){
         let itemCart = JSON.parse(cartData);
         itemCart = itemCart.filter((item:products)=>{
-          ProductId == item.id
+          return ProductId == item.id
         })
+        // console.log(itemCart)
         if(itemCart.length){
-          this.removeCart = true
+          this.removeCart = true;
+          // console.log(this.removeCart = true)
         }else{
-          this.removeCart = false
+          this.removeCart = false;
+          // console.log(this.removeCart = false)
         }
       }
     })
