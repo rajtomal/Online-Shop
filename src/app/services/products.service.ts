@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { products } from '../data-type';
+import { products, userCartData } from '../data-type';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+  id(id: any) {
+    throw new Error('Method not implemented.');
+  }
   showCartQty = new EventEmitter<products[] | []>()
   loader = new BehaviorSubject<boolean>(false)
 
@@ -52,9 +55,13 @@ export class ProductsService {
     let cartData = localStorage.getItem('localCart');
     if (cartData) {
       let items: products[] = JSON.parse(cartData)
-      items = items.filter((item: products) => productId !== item.id)
-      localStorage.setItem('localCart', JSON.stringify(items))
-      this.showCartQty.emit(items)
+      items = items.filter((item: products) => {
+        return productId === item.id;
+      })
+      console.log(items)
     }
+  }
+  UserAddToCart(cart:userCartData){
+    return this.http.post('https://online-shop-abay.onrender.com/cartData', cart)
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { products } from '../data-type';
+import { products, userCartData } from '../data-type';
 
 @Component({
   selector: 'app-product-details',
@@ -24,16 +24,16 @@ export class ProductDetailsComponent {
 
       // remove cart code
       let cartData = localStorage.getItem('localCart')
-      if(ProductId && cartData){
+      if (ProductId && cartData) {
         let itemCart = JSON.parse(cartData);
-        itemCart = itemCart.filter((item:products)=>{
+        itemCart = itemCart.filter((item: products) => {
           return ProductId == item.id
         })
         // console.log(itemCart)
-        if(itemCart.length){
+        if (itemCart.length) {
           this.removeCart = true;
           // console.log(this.removeCart = true)
-        }else{
+        } else {
           this.removeCart = false;
           // console.log(this.removeCart = false)
         }
@@ -53,6 +53,18 @@ export class ProductDetailsComponent {
       if (!localStorage.getItem('user')) {
         this.product.addCartQtyLocal(this.productDetailsItem)
         this.removeCart = true
+      } else if (localStorage.getItem('user')) {
+        let localUser = localStorage.getItem('user');
+        let userId = localUser && JSON.parse(localUser).id
+        let cartData: userCartData = {
+          ...this.productDetailsItem,
+          userId,
+          productId: this.productDetailsItem.id,
+        }
+        delete cartData.id;
+        this.product.UserAddToCart(cartData).subscribe((result) => {
+          console.log(result)
+        })
       }
     }
   }
