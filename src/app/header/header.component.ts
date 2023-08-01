@@ -50,6 +50,16 @@ export class HeaderComponent {
     this.product.showCartQty.subscribe((result) => {
       this.showCart = result.length
     })
+
+    // user Cart Qty
+    // this.product.userGetToCart().subscribe((result)=>{
+    //   if(result){
+    //     this.showCart = result.length
+    //     console.log(result.length,result)
+    //   }
+    // })
+
+
   }
   logOut() {
     if (localStorage.getItem('seller')) {

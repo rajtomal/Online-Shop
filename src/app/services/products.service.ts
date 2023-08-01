@@ -64,4 +64,7 @@ export class ProductsService {
   UserAddToCart(cart:userCartData){
     return this.http.post('https://online-shop-abay.onrender.com/cartData', cart)
   }
+  // userGetToCart(){
+  //   return this.http.get<userCartData[]>('https://online-shop-abay.onrender.com/cartData')
+  // }
 }
