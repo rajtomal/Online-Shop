@@ -23,20 +23,20 @@ export class HeaderComponent {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           // signup seller
-          console.log("SignUp seller")
+          // console.log("SignUp seller")
           let sellerStore: any = localStorage.getItem('seller');
           let sellerData: any = sellerStore && JSON.parse(sellerStore);
           this.sellerName = sellerData.name;
           this.menuType = 'seller';
         } else if (localStorage.getItem('user')) {
           // signup seller
-          console.log("SignUp user")
+          // console.log("SignUp user")
           let userStore: any = localStorage.getItem('user');
           let userData: any = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType = 'user';
         } else {
-          console.log("not seller")
+          // console.log("not seller")
           this.menuType = 'default';
         }
       }

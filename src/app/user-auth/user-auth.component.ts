@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { SignUp, logIn } from '../data-type';
+import { SignUp, logIn, products, userCartData } from '../data-type';
 import { UserService } from '../services/user.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -9,29 +10,61 @@ import { UserService } from '../services/user.service';
 })
 export class UserAuthComponent {
   showLogin: boolean = false;
-  userLoginError:undefined | string;
-  constructor(private user: UserService) { }
+  userLoginError: undefined | string;
+  constructor(private user: UserService, private product: ProductsService) { }
   ngOnInit(): void {
     this.user.userAuthReload();
+  }
+  signUpUser(data: SignUp) {
+    this.user.userSignUp(data);
   }
   logInUser(data: logIn) {
     this.user.logInUser(data);
     this.user.isLogInError.subscribe((isError) => {
-      if(isError){
+      if (isError) {
         this.userLoginError = 'Email & Password is not Correct';
         setTimeout(() => {
           this.userLoginError = undefined
         }, 3000);
+      } else{
+        this.localCartToRemoteCart();
       }
     })
-  }
-  signUpUser(data: SignUp) {
-    this.user.userSignUp(data);
   }
   loginPageUser() {
     this.showLogin = !this.showLogin
   }
   signUpPageUser() {
     this.showLogin = !this.showLogin
+  }
+  // user login cart system
+  localCartToRemoteCart() {
+    console.log("called")
+    let data = localStorage.getItem('localCart')
+    if (data) {
+      let cartDataList: products[] = JSON.parse(data)
+      let user = localStorage.getItem('user');
+      let userId = user && JSON.parse(user).id;
+
+      cartDataList.forEach((product: products, index) => {
+        let cartData: userCartData = {
+          ...product,
+          productId: product.id,
+          userId
+        }
+        delete cartData.id;
+        setTimeout(() => {
+          this.product.UserAddToCart(cartData).subscribe((result) => {
+            console.log('errrrrrror')
+            if (result) {
+              console.log("item store in DB")
+            }
+          })
+        }, 500);
+        if (cartDataList.length === index + 1) {
+          localStorage.removeItem('localCart');
+        }
+      });
+    }
   }
 }

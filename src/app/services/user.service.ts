@@ -32,6 +32,7 @@ export class UserService {
         localStorage.setItem('user', JSON.stringify(result.body[0]))
         console.log('user Login')
         this.route.navigate([''])
+        this.isLogInError.emit(false)
       }else{
         console.log("user not login")
         this.isLogInError.emit(true)
