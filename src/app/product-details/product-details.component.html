@@ -2,14 +2,14 @@
 <div class="product-details">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-5 my-2">
                 <div class="details-img">
                     <img src="{{productDetailsItem?.imgUrl}}" alt="product-details-img">
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 my-2">
                 <div class="details-text">
-                    <h3>{{productDetailsItem?.name}}</h3>
+                    <h3>{{productDetailsItem?.name}}<span class="price">{{productDetailsItem?.price | number}}</span></h3>
                     <h5>Model: <span>{{productDetailsItem?.model}}</span></h5>
                     <h5>Category: <span>{{productDetailsItem?.category}}</span></h5>
                     <h5>Color: <span>{{productDetailsItem?.color}}</span></h5>
