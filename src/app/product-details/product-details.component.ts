@@ -12,6 +12,8 @@ export class ProductDetailsComponent {
   productQuantity: number = 1;
   productDetailsItem: undefined | products;
   removeCart = false;
+  cartDataAgain:products|undefined;
+
   constructor(private product: ProductsService, private activeRouter: ActivatedRoute) { }
   ngOnInit(): void {
     this.detailsProduct();
@@ -38,6 +40,20 @@ export class ProductDetailsComponent {
           // console.log(this.removeCart = false)
         }
       }
+      let localUser = localStorage.getItem('user');
+      if(localUser){
+        let userId = localUser && JSON.parse(localUser).id
+        this.product.userGetToCart(userId);
+        this.product.showCartQty.subscribe((result)=>{
+        let item = result.filter((item:products)=>{
+         return ProductId == item.productId
+        })
+        if(item.length){
+          this.cartDataAgain = item[0];
+          this.removeCart=true;
+         }
+        })
+      }
     })
   }
   productQuntity(val: string) {
@@ -62,14 +78,38 @@ export class ProductDetailsComponent {
           productId: this.productDetailsItem.id,
         }
         delete cartData.id;
+        // remove button show
         this.product.UserAddToCart(cartData).subscribe((result) => {
           console.log(result)
+          if(result){
+            this.product.userGetToCart(userId);
+            this.removeCart = true
+          }
         })
       }
     }
   }
   removeToCart(id: any) {
-    this.removeCart = false
-    this.product.removeCartQtyLocal(id)
+    if (!localStorage.getItem('user')) {
+      this.removeCart = false
+      this.product.removeCartQtyLocal(id)
+    }else{
+      let localUser = localStorage.getItem('user');
+      let userId = localUser && JSON.parse(localUser).id
+      this.cartDataAgain && this.product.deleteCart(this.cartDataAgain.id).subscribe((result)=>{
+        if(result){
+          this.product.userGetToCart(userId)
+        }
+      })
+      this.removeCart = false;
+      console.log(this.cartDataAgain?.id)
+    }
+    // remove database http
+    // this.product.deleteCart(id).subscribe((result) => {
+    //   if (result) {
+    //     alert('Product is Delete')
+    //     console.log(result)
+    //   } this.addToCart();
+    // })
   }
 }

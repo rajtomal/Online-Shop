@@ -35,6 +35,7 @@ export class HeaderComponent {
           let userData: any = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType = 'user';
+          this.product.userGetToCart(userData.id)
         } else {
           // console.log("not seller")
           this.menuType = 'default';
@@ -69,6 +70,7 @@ export class HeaderComponent {
       localStorage.removeItem('user');
       this.route.navigate(['']);
     }
+    this.product.showCartQty.emit([])
   }
   searchProdutsItem(query: KeyboardEvent) {
     if (query) {

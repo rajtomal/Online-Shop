@@ -56,15 +56,23 @@ export class ProductsService {
     if (cartData) {
       let items: products[] = JSON.parse(cartData)
       items = items.filter((item: products) => {
-        return productId === item.id;
+        return productId !== item.id;
       })
-      console.log(items)
+      localStorage.setItem('localCart', JSON.stringify(items))
+      this.showCartQty.emit(items)
     }
   }
   UserAddToCart(cart:userCartData){
     return this.http.post('https://online-shop-abay.onrender.com/cartData', cart)
   }
-  // userGetToCart(){
-  //   return this.http.get<userCartData[]>('https://online-shop-abay.onrender.com/cartData')
-  // }
+  userGetToCart(userId:number){
+    return this.http.get<products[]>(`https://online-shop-abay.onrender.com/cartData?userId=`+userId,{observe:'response'}).subscribe((result)=>{
+      if(result && result.body){
+        this.showCartQty.emit(result.body)
+      }
+    })
+  }
+  deleteCart(id: number) {
+    return this.http.delete(`https://online-shop-abay.onrender.com/cartData/${id}`)
+  }
 }

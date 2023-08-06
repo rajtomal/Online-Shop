@@ -18,7 +18,8 @@ export interface products{
     description: string,
     id:number,
     seeMore:boolean,
-    addCartQty: undefined | number
+    addCartQty: undefined | number,
+    productId: undefined | number,
 }
 export interface userCartData{
     name: string,

@@ -1,35 +1,40 @@
-
 <div class="product-details">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 my-2">
-                <div class="details-img">
-                    <img src="{{productDetailsItem?.imgUrl}}" alt="product-details-img">
-                </div>
-            </div>
-            <div class="col-lg-7 my-2">
-                <div class="details-text">
-                    <h3>{{productDetailsItem?.name}}<span class="price">{{productDetailsItem?.price | number}}</span></h3>
-                    <h5>Model: <span>{{productDetailsItem?.model}}</span></h5>
-                    <h5>Category: <span>{{productDetailsItem?.category}}</span></h5>
-                    <h5>Color: <span>{{productDetailsItem?.color}}</span></h5>
-                    <h5>Description: </h5>
-                    <p>{{productDetailsItem?.description}}</p>
-                    <div class="quantity-group">
-                        <button (click)="productQuntity('min')" class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/></svg></button>
-                        <input disabled type="number" value="{{productQuantity}}">
-                        <button (click)="productQuntity('plus')" class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.75 7.75h-10m5-5v10"/></svg></button>
-                    </div>
-                    <div class="details-btn">
-                        <button *ngIf="!removeCart" (click)="addToCart()">Add to Cart</button>
-                        <button *ngIf="removeCart" (click)="removeToCart(productDetailsItem?.id)" class="remove-to-cart">Remove to Cart</button>
-                        <button class="buy-btn">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 my-2">
+        <div class="details-img">
+          <img src="{{productDetailsItem?.imgUrl}}" alt="product-details-img">
         </div>
+      </div>
+      <div class="col-lg-7 my-2">
+        <div class="details-text">
+          <h3>{{productDetailsItem?.name}}</h3>
+          <span class="price">{{productDetailsItem?.price | number}}</span>
+          <h5>Model: <span>{{productDetailsItem?.model}}</span></h5>
+          <h5>Category: <span>{{productDetailsItem?.category}}</span></h5>
+          <h5>Color: <span>{{productDetailsItem?.color}}</span></h5>
+          <h5>Description: </h5>
+          <p>{{productDetailsItem?.description}}</p>
+          <div class="quantity-group">
+            <button (click)="productQuntity('min')" class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 12h14" /></svg></button>
+            <input disabled type="number" value="{{productQuantity}}">
+            <button (click)="productQuntity('plus')" class="plus"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" viewBox="0 0 16 16">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5" d="M12.75 7.75h-10m5-5v10" /></svg></button>
+          </div>
+          <div class="details-btn">
+            <button *ngIf="!removeCart" (click)="addToCart()">Add to Cart</button>
+            <button *ngIf="removeCart" (click)="removeToCart(productDetailsItem?.id)" class="remove-to-cart">Remove to
+              Cart</button>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <app-loder-common></app-loder-common>
+  </div>
+  <app-loder-common></app-loder-common>
 </div>
-
-
