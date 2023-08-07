@@ -97,10 +97,11 @@ export class ProductDetailsComponent {
       let localUser = localStorage.getItem('user');
       let userId = localUser && JSON.parse(localUser).id
       this.cartDataAgain && this.product.deleteCart(this.cartDataAgain.id).subscribe((result)=>{
+        
         if(result){
           this.product.userGetToCart(userId)
         }
-      })
+      }) 
       this.removeCart = false;
       console.log(this.cartDataAgain?.id)
     }
