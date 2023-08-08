@@ -19,6 +19,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { LoderCommonComponent } from './loder-common/loder-common.component';
 import { AppHttpInterceptor } from './app-http-interceptor';
+import { CartDetailsComponent } from './cart-details/cart-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AppHttpInterceptor } from './app-http-interceptor';
     ProductDetailsComponent,
     UserAuthComponent,
     LoderCommonComponent,
+    CartDetailsComponent,
   ],
   imports: [
     BrowserModule,

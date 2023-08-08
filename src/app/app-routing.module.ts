@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { LoderCommonComponent } from './loder-common/loder-common.component';
+import { CartDetailsComponent } from './cart-details/cart-details.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path:'user-auth',
     component:UserAuthComponent
+  },
+  {
+    path:'cart-details',
+    component:CartDetailsComponent
   }
 ];
 
