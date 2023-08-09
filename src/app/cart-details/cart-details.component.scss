@@ -1,3 +1,164 @@
 .cart-img img{
     width: 100%;
 }
+.cart-img{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 20%;
+}
+.cart-details{
+    padding: 40px 0;
+    background: #F7F9FF;
+}
+.cart-detailes-all{
+    box-shadow: 5px -3px 30px 1px #0000000d;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+.cart-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    padding:5px 13px 15px;
+    margin: 0 10px;
+    border-bottom: 1px solid #ddd;
+}
+.all-cart{
+    padding: 10px 0px;
+    border-bottom: 1px solid #ddd;
+    margin: 0 15px;
+}
+.cart-details-info{
+    width: 80%;
+    padding: 0 25px;
+}
+// .cart-currancy{
+//     // width: 20%;
+// }
+.quantity-group{
+    margin: 2px 0;
+    display: inline-block;
+    position: relative;
+}
+.quantity-group input {
+    height: 36px;
+    text-align: center;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+}
+.quantity-group .minus{
+    height: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.quantity-group .plus{
+    height: 100%;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+.quantity-group button svg{
+    margin-bottom: 2px;
+}
+.cart-details-info  h4{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 0;
+    margin: 0;
+}
+.cart-details-info  h5 {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0;
+    margin: 0;
+}
+.cart-details-info  h5 span {
+    font-size: 16px;
+    font-weight: 400;
+}
+.cart-currancy{
+    text-align: center;
+}
+.cart-currancy h4 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 7px;
+    text-align: center;
+    color: rgb(18, 153, 232);
+    background: #eff3fd;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+.cart-currancy  button {
+    border: navajowhite;
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: #fff;
+    width: 100%;
+}
+.cart-currancy  button svg{
+    margin-top: -4px;
+    margin-right: 10px;
+}
+.order-summary{
+    box-shadow: 5px -3px 30px 1px rgba(0, 0, 0, 0.0509803922);
+    background: #fff;
+    border-radius: 5px;
+}
+.order-info {
+    padding: 10px 15px;
+}
+.order-info h4{
+    font-size: 16px;
+    font-weight: 700;
+    
+}
+.order-info h5{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px 0;
+}
+.order-info h5 span{
+    font-size: 16px;
+    font-weight: 700;
+    float: right;
+}
+.total-order{
+    border-top: 1px solid #ddd;
+}
+.total-order h4{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+.total-order h4 span{
+    float: right;
+}
+.buy-btn button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #27ae60;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+.buy-btn button svg {
+    margin-right: 10px;
+    margin-top: -2px;
+}
