@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   {
     path:'cart-details',
-    component:CartDetailsComponent
+    component:CartDetailsComponent,
   }
 ];
 

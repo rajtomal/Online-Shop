@@ -7,11 +7,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  id(id: any) {
-    throw new Error('Method not implemented.');
-  }
+  // id(id: any) {
+  //   throw new Error('Method not implemented.');
+  // }
   showCartQty = new EventEmitter<products[] | []>()
-  loader = new BehaviorSubject<boolean>(false)
+  loader = new BehaviorSubject<boolean>(false);
+  cartData = new EventEmitter<products[] | []>()
 
   constructor(private http: HttpClient) { }
 
@@ -69,6 +70,8 @@ export class ProductsService {
     return this.http.get<products[]>(`https://online-shop-abay.onrender.com/cartData?userId=`+userId,{observe:'response'}).subscribe((result)=>{
       if(result && result.body){
         this.showCartQty.emit(result.body)
+        // console.log(result.body)
+        this.cartData.emit(result.body)
       }
     })
   }
