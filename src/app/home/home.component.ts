@@ -38,4 +38,7 @@ export class HomeComponent {
     // console.log(id)
     this.route.navigate([`product-details/${id}`])
   }
+  addToCart(num:number){
+    console.log(num)
+  }
 }

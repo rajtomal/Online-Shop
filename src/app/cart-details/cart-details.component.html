@@ -4,7 +4,7 @@
       <div class="col-lg-8">
         <div class="cart-detailes-all">
           <div class="cart-header">
-            <h1>My Cart (0)</h1>
+            <h1>My Cart ({{cartAllData?.length}})</h1>
           </div>
           <div class="all-cart">
             <div *ngIf="cartAllData?.length" class="carts">
@@ -61,11 +61,14 @@
             <h1>Order Summary</h1>
           </div>
           <div class="order-info">
-            <h4>Cart Subtotal</h4>
-            <h5>Subtotal (2 items) <span>$38954</span></h5>
-            <h5>Delivery Cost <span>$000</span></h5>
+            <h4>Cart Subtotal ({{cartAllData?.length}} items)</h4>
+            <div>
+
+            </div>
+            <h5 *ngFor="let item of cartAllData">{{item.name}} <span>৳{{item.price}}</span></h5>
+            <h5>Delivery Cost <span>৳000</span></h5>
             <div class="total-order">
-              <h4>Total <span>৳ 36,889</span></h4>
+              <h4>Total <span>৳{{totalPrice}}</span></h4>
             </div>
           </div>
         </div>
