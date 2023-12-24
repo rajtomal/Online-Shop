@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { products } from '../data-type';
 import { Router } from '@angular/router';
+// import Slider from '../../assets/images/slider-1.jpg';
 
 @Component({
   selector: 'app-home',
@@ -18,20 +19,21 @@ export class HomeComponent {
     this.Product.trendyProducts().subscribe((result) => {
       // console.log(result)
       this.trendyProductsItem = result
+      console.log(this.trendyProductsItem)
     })
   }
   imagesAll = [
     {
-      images : 'https://azse77seaprodsa.blob.core.windows.net/b2b-dr-pickaboocdn/media/dcastalia_hybridslider/image/big_banner_6_.jpg'
+      images : '../../assets/images/slider-1.jpg'
     },
     {
-      images : 'https://azse77seaprodsa.blob.core.windows.net/b2b-dr-pickaboocdn/media/dcastalia_hybridslider/image/Nord_CE_3_Lite_5G_Series_big_banner_1__1.jpg'
+      images : '../../assets/images/slider-2.jpg'
     },
     {
-      images : 'https://azse77seaprodsa.blob.core.windows.net/b2b-dr-pickaboocdn/media/dcastalia_hybridslider/image/Big_Banner_5_1_.jpg'
+      images : '../../assets/images/slider-3.jpg'
     },
     {
-      images : 'https://azse77seaprodsa.blob.core.windows.net/b2b-dr-pickaboocdn/media/dcastalia_hybridslider/image/Big_Banner_9_1_.jpg'
+      images : '../../assets/images/slider-4.jpg'
     }
   ]
   moreDetails(id:number){
