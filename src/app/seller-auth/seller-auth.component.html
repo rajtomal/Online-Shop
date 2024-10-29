@@ -36,6 +36,10 @@
 
           <div *ngIf="showLogin" class="all-signup">
             <h1>Log In</h1>
+            <div class="text-center">
+              <p class="d-inline-block m-0 me-3 p-0">Emial: <strong>hi@gmail.com</strong></p>
+              <p class="d-inline-block m-0 p-0">Password: <strong>1234</strong></p>
+            </div>
             <form #sellerLogIn="ngForm" (ngSubmit)="logIn(sellerLogIn.value)" class="from-box">
               <div class="input-box">
                 <input type="email" ngModel name="email" placeholder="Enter email" #email="ngModel" email required>
@@ -49,6 +53,7 @@
               <button [disabled]="sellerLogIn.invalid">Log In</button>
             </form>
             <p>Don't have any account? <a (click)="signUpPage()">SignUp</a></p>
+            
           </div>
         </div>
       </div>
